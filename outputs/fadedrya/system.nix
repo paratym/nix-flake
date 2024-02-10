@@ -32,6 +32,16 @@
   programs.zsh.enable = true;
   programs.dconf.enable = true;
   virtualisation.docker.enable = true;
+  programs.hyprland.enable = true;
+  programs.steam = {
+    enable = true;
+    gamescopeSession = {
+      enable = true;
+      args = [ "--expose-wayland" ];
+    };
+    remotePlay.openFirewall = true;
+  };
+
   networking.firewall.enable = true;
   networking.networkmanager.enable = true;
 
@@ -48,4 +58,5 @@
       extraGroups = [ "wheel" "video" "audio" "networkmanager" "docker" ];
     };
   };
+
 }
