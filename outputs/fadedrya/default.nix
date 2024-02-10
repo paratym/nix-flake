@@ -3,6 +3,10 @@
     inherit pkgs;
     inherit (pkgs) system;
     specialArgs = args;
-    modules = [ ./system.nix { networking.hostName = "fadedrya"; } ];
+    modules = [
+      ./system.nix
+      ../../modules/nixos
+      { networking.hostName = "fadedrya"; }
+    ];
   };
 }
