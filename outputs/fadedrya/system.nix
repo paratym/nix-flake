@@ -35,6 +35,11 @@
   networking.firewall.enable = true;
   networking.networkmanager.enable = true;
 
+  services.openssh.enable = true;
+  programs.ssh.startAgent = true;
+
+  services.logind.lidSwitch = "ignore";
+
   users.users = rec {
     nathan = ben;
     ben = {
