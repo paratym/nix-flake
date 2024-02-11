@@ -5,7 +5,7 @@
     specialArgs = args;
     modules = [
       ./system.nix
-      ../../modules/nixos
+      ../../modules/nixos/nvidia.nix
       { networking.hostName = "fadedrya"; }
     ];
   };

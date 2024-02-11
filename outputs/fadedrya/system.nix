@@ -42,6 +42,8 @@
     remotePlay.openFirewall = true;
   };
 
+  services.xserver.videoDrivers = [ "nvidia" ];
+
   networking.firewall.enable = true;
   networking.networkmanager.enable = true;
 
