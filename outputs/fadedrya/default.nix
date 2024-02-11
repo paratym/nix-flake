@@ -6,6 +6,7 @@
     modules = [
       ./system.nix
       ../../modules/nixos/nvidia.nix
+	  ../../modules/nixos/plasma.nix
       { networking.hostName = "fadedrya"; }
     ];
   };

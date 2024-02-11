@@ -42,10 +42,25 @@
     remotePlay.openFirewall = true;
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings.General.ControllerMode = "bredr";
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" "intel" ];
 
   networking.firewall.enable = true;
   networking.networkmanager.enable = true;
+
+  sound.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+  };
 
   services.openssh.enable = true;
   programs.ssh.startAgent = true;
