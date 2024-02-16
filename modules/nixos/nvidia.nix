@@ -3,7 +3,9 @@
   hardware.opengl.driSupport = true;
   hardware.opengl.driSupport32Bit = true;
 
-  boot.kernelParams = [ "module_blacklist=nouveau" ];
+  boot.loader.systemd-boot.consoleMode = "auto"; 
+  services.xserver.videoDrivers = [ "nvidia" "intel" ];
+  boot.kernelParams = [ "module_blacklist=nouveau"];
 
   hardware.nvidia = {
     modesetting.enable = true;

@@ -27,6 +27,7 @@
     htop
     tree
     jq
+    dolphin-emu
   ];
 
   programs.zsh.enable = true;
@@ -48,8 +49,6 @@
     settings.General.ControllerMode = "bredr";
   };
 
-  services.xserver.videoDrivers = [ "nvidia" "intel" ];
-
   networking.firewall.enable = true;
   networking.networkmanager.enable = true;
 
@@ -66,6 +65,8 @@
   programs.ssh.startAgent = true;
 
   services.logind.lidSwitch = "ignore";
+
+  services.kmscon.enable = true;
 
   users.users = rec {
     nathan = ben;
