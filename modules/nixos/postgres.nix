@@ -1,6 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
+  networking.firewall.allowedTCPPorts = [ config.services.postgresql.port ];
   services.postgresql = {
     enable = true;
+    package = pkgs.postgresql_16;
     enableTCPIP = true;
     ensureDatabases = [ "crud" ];
     authentication = pkgs.lib.mkOverride 10 ''
